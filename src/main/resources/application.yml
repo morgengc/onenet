@@ -22,8 +22,8 @@ spring:
     name: datasource
     initialize: false
     url: jdbc:mysql://127.0.0.1:3306/onenet?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF8
-    username: onenet
-    password: 123456
+    username: root
+    password: root
     driverClassName: com.mysql.jdbc.Driver
     max-active: 2
     max-idle: 2
@@ -54,7 +54,7 @@ pagehelper:
 
 cmcc:
   onenet:
-    drivceid: 566118
-    api-key: CbCDi846ndvqH7rsR9rd93DJ6OcA
+    drivceid: 39333785
+    api-key: 9UEjFtzBsVdbfr6DaV9VvLM3kos=
     
     
