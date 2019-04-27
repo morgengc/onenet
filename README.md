@@ -37,11 +37,11 @@ cmcc:
 
 访问 http://localhost:8081/swagger-ui.html 即可以查看项目实现的 API。目前项目实现了两个 API，新增和查询。
 
-![img/image_1d9fm3u451oae9p8hsq1qnhcte9.png-101kB][1]
+![接口](https://github.com/morgengc/onenet/blob/master/img/image_1d9fm3u451oae9p8hsq1qnhcte9.png)
 
 点开查询，在默认参数那里单击一下，就可以将默认参数填入输入框中（Chrome 可以，Firefox 不行）。
 
-![img/image_1d9fm85r93ae8h7mjb9av8dim.png-189.2kB][2]
+![查询](https://github.com/morgengc/onenet/blob/master/img/image_1d9fm85r93ae8h7mjb9av8dim.png)
 
 修改成我们的实际参数，如下：
 
