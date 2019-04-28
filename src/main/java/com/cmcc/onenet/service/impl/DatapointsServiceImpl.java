@@ -43,6 +43,7 @@ public class DatapointsServiceImpl extends OneNetBaseService implements Datapoin
 
     /**
      * 从OneNET查询数据点
+     *
      * @param requestBean
      * @return
      */

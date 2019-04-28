@@ -11,16 +11,15 @@ import org.slf4j.LoggerFactory;
  * @Date: Create in 2017/12/7 0:23
  */
 public abstract class BaseService {
-	public final Logger logger = LoggerFactory.getLogger(getClass());
+    public final Logger logger = LoggerFactory.getLogger(getClass());
 
+    protected void throwException(int code, String codeLabel) {
+        BusinessException e = new BusinessException(code, codeLabel, codeLabel);
+        throw e;
+    }
 
-	protected void throwException(int code, String codeLabel) {
-		BusinessException e = new BusinessException(code, codeLabel, codeLabel);
-		throw e;
-	}
-
-	protected void throwException(Errors error) {
-		BusinessException e = new BusinessException(error, error.label);
-		throw e;
-	}
+    protected void throwException(Errors error) {
+        BusinessException e = new BusinessException(error, error.label);
+        throw e;
+    }
 }

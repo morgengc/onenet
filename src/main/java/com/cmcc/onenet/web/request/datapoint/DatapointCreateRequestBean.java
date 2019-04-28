@@ -15,39 +15,39 @@ import java.util.List;
 @ApiModel
 public class DatapointCreateRequestBean {
 
-	@ApiModelProperty(value = "数据流")
-	@Valid
-	private List<DatastreamsRequestBean> datastreams;
+    @ApiModelProperty(value = "数据流")
+    @Valid
+    private List<DatastreamsRequestBean> datastreams;
 
-	//上传数据类型（可选，默认为1(完整JSON型)，见HTTP内容示例）
-	@ApiModelProperty(value = "上传数据类型（可选，默认为1(完整JSON型)，见HTTP内容示例）")
-	private Integer type = 1;
-	//设备ID
-	@ApiModelProperty(value = "设备ID")
-	@NotNull(message = "设备ID不能为空")
-	private Long deviceId;
+    //上传数据类型（可选，默认为1(完整JSON型)，见HTTP内容示例）
+    @ApiModelProperty(value = "上传数据类型（可选，默认为1(完整JSON型)，见HTTP内容示例）")
+    private Integer type = 1;
+    //设备ID
+    @ApiModelProperty(value = "设备ID")
+    @NotNull(message = "设备ID不能为空")
+    private Long deviceId;
 
-	public List<DatastreamsRequestBean> getDatastreams() {
-		return datastreams;
-	}
+    public List<DatastreamsRequestBean> getDatastreams() {
+        return datastreams;
+    }
 
-	public void setDatastreams(List<DatastreamsRequestBean> datastreams) {
-		this.datastreams = datastreams;
-	}
+    public void setDatastreams(List<DatastreamsRequestBean> datastreams) {
+        this.datastreams = datastreams;
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public Integer getType() {
+        return type;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-	public Long getDeviceId() {
-		return deviceId;
-	}
+    public Long getDeviceId() {
+        return deviceId;
+    }
 
-	public void setDeviceId(Long deviceId) {
-		this.deviceId = deviceId;
-	}
+    public void setDeviceId(Long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

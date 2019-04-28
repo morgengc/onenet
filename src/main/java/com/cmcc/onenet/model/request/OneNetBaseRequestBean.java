@@ -11,63 +11,63 @@ import static com.cmcc.onenet.constants.Constants.Method.POST;
  */
 public class OneNetBaseRequestBean<T> {
 
-	private String apiKey;
+    private String apiKey;
 
-	private String contentType;
+    private String contentType;
 
-	private String url;
+    private String url;
 
-	private Map<String, Object> urlParam;
+    private Map<String, Object> urlParam;
 
-	private T content;
+    private T content;
 
-	private String method = POST.toString();
+    private String method = POST.toString();
 
-	public String getApiKey() {
-		return apiKey;
-	}
+    public String getApiKey() {
+        return apiKey;
+    }
 
-	public void setApiKey(String apiKey) {
-		this.apiKey = apiKey;
-	}
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
 
-	public String getContentType() {
-		return contentType;
-	}
+    public String getContentType() {
+        return contentType;
+    }
 
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-	}
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public T getContent() {
-		return content;
-	}
+    public T getContent() {
+        return content;
+    }
 
-	public void setContent(T content) {
-		this.content = content;
-	}
+    public void setContent(T content) {
+        this.content = content;
+    }
 
-	public Map<String, Object> getUrlParam() {
-		return urlParam;
-	}
+    public Map<String, Object> getUrlParam() {
+        return urlParam;
+    }
 
-	public void setUrlParam(Map<String, Object> urlParam) {
-		this.urlParam = urlParam;
-	}
+    public void setUrlParam(Map<String, Object> urlParam) {
+        this.urlParam = urlParam;
+    }
 
-	public String getMethod() {
-		return method;
-	}
+    public String getMethod() {
+        return method;
+    }
 
-	public void setMethod(String method) {
-		this.method = method;
-	}
+    public void setMethod(String method) {
+        this.method = method;
+    }
 }

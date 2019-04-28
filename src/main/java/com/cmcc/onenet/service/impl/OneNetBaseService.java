@@ -33,6 +33,7 @@ public abstract class OneNetBaseService extends BaseService {
 
     /**
      * 根据本地的请求参数，组装URL访问OneNET，并返回OneNET的响应
+     *
      * @param bean 本地请求参数
      * @return OneNET响应
      */
@@ -52,6 +53,7 @@ public abstract class OneNetBaseService extends BaseService {
 
     /**
      * 构建OneNET API的参数列表
+     *
      * @param urlParam
      * @return
      */

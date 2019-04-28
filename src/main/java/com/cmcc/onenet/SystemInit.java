@@ -15,21 +15,21 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
  */
 public class SystemInit implements ApplicationListener<ContextRefreshedEvent> {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	private static boolean isStart = false;
+    private static boolean isStart = false;
 
-	@Override
-	public void onApplicationEvent(ContextRefreshedEvent event) {
-		if (!isStart) {
-			logger.info("系统初始化开始....");
-			isStart = true;
-			// 配置全局的FastJSON变量
-			logger.info("配置全局的fastjson变量");
-			JSON.DEFAULT_GENERATE_FEATURE |= SerializerFeature.DisableCircularReferenceDetect.getMask();
+    @Override
+    public void onApplicationEvent(ContextRefreshedEvent event) {
+        if (!isStart) {
+            logger.info("系统初始化开始....");
+            isStart = true;
+            // 配置全局的FastJSON变量
+            logger.info("配置全局的fastjson变量");
+            JSON.DEFAULT_GENERATE_FEATURE |= SerializerFeature.DisableCircularReferenceDetect.getMask();
 
-			logger.info("系统初始化结束....");
-		}
-	}
+            logger.info("系统初始化结束....");
+        }
+    }
 
 }

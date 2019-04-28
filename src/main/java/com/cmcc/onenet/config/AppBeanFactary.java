@@ -30,46 +30,44 @@ import static springfox.documentation.schema.AlternateTypeRules.newRule;
 @EnableConfigurationProperties
 public class AppBeanFactary {
 
-  @Resource
-  private AppConfig appConfig;
-  @Autowired
-  private TypeResolver typeResolver;
+    @Resource
+    private AppConfig appConfig;
+    @Autowired
+    private TypeResolver typeResolver;
 
-  /**
-   * 生成API文档的入口
-   */
-  @Bean
-  public Docket generateApi() {
-    Docket docket = null;
-    // 可以根据配置决定不做任何API生成
-    if (!appConfig.getAllowGenerateApi()) {
-      docket = new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.none())
-          .build();
+    /**
+     * 生成API文档的入口
+     */
+    @Bean
+    public Docket generateApi() {
+        Docket docket = null;
+        // 可以根据配置决定不做任何API生成
+        if (!appConfig.getAllowGenerateApi()) {
+            docket = new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.none())
+                    .build();
+        }
+
+        docket = new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                // 标示只有被 @Api 标注的才能生成API.
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+                .paths(PathSelectors.any()).build()
+                .pathMapping("/")
+                .directModelSubstitute(LocalDate.class, String.class)
+                // 遇到 LocalDate时，输出成String
+                .genericModelSubstitutes(ResponseEntity.class)
+                .alternateTypeRules(
+                        newRule(
+                                typeResolver.resolve(DeferredResult.class,
+                                        typeResolver.resolve(ResponseEntity.class, WildcardType.class)),
+                                typeResolver.resolve(WildcardType.class)))
+                .useDefaultResponseMessages(false);
+        return docket;
     }
 
-    docket = new Docket(DocumentationType.SWAGGER_2)
-        .apiInfo(apiInfo())
-        .select()
-        // 标示只有被 @Api 标注的才能生成API.
-        .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-        .paths(PathSelectors.any()).build()
-        .pathMapping("/")
-        .directModelSubstitute(LocalDate.class, String.class)
-        // 遇到 LocalDate时，输出成String
-        .genericModelSubstitutes(ResponseEntity.class)
-        .alternateTypeRules(
-            newRule(
-                typeResolver.resolve(DeferredResult.class,
-                    typeResolver.resolve(ResponseEntity.class, WildcardType.class)),
-                typeResolver.resolve(WildcardType.class)))
-        .useDefaultResponseMessages(false);
-    return docket;
-  }
-
-  private ApiInfo apiInfo() {
-    return new ApiInfo("中国移动ONENET系统对接接口", "中国移动ONENET系统对接接口", "1.0.0", "", "", "", "");
-  }
-
-
+    private ApiInfo apiInfo() {
+        return new ApiInfo("中国移动ONENET系统对接接口", "中国移动ONENET系统对接接口", "1.0.0", "", "", "", "");
+    }
 
 }

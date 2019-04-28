@@ -10,20 +10,19 @@ import com.cmcc.onenet.web.request.datapoint.DatapointQueryRequestBean;
  * @Date: Create in 2017/12/7 0:22
  */
 public interface DatapointsService {
-	/**
-	 * 新增数据点
-	 *
-	 * @param requestBean
-	 */
-	void createDatapoints(DatapointCreateRequestBean requestBean);
+    /**
+     * 新增数据点
+     *
+     * @param requestBean
+     */
+    void createDatapoints(DatapointCreateRequestBean requestBean);
 
-	/**
-	 * 查询
-	 * @param requestBean
-	 * @return
-	 */
-	JSONObject query(DatapointQueryRequestBean requestBean);
-
-
+    /**
+     * 查询
+     *
+     * @param requestBean
+     * @return
+     */
+    JSONObject query(DatapointQueryRequestBean requestBean);
 
 }

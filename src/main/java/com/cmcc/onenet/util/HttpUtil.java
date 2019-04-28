@@ -113,8 +113,9 @@ public class HttpUtil {
 
     /**
      * 发送 GET 请求
-     * @param url   网址
-     * @param headers   头部信息
+     *
+     * @param url     网址
+     * @param headers 头部信息
      * @return
      * @throws Exception
      */

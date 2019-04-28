@@ -14,30 +14,28 @@ import java.util.List;
  */
 @ApiModel
 public class DatastreamsRequestBean {
-	@ApiModelProperty(value = "数据流名称或数据流模板名称")
-	@NotBlank(message = "数据流名称不能为空")
-	private String id;
+    @ApiModelProperty(value = "数据流名称或数据流模板名称")
+    @NotBlank(message = "数据流名称不能为空")
+    private String id;
 
-	@ApiModelProperty(value = "数据流")
-	@Valid
-	private List<DatapointsRequestBean> datapoints;
+    @ApiModelProperty(value = "数据流")
+    @Valid
+    private List<DatapointsRequestBean> datapoints;
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public List<DatapointsRequestBean> getDatapoints() {
-		return datapoints;
-	}
+    public List<DatapointsRequestBean> getDatapoints() {
+        return datapoints;
+    }
 
-	public void setDatapoints(List<DatapointsRequestBean> datapoints) {
-		this.datapoints = datapoints;
-	}
-
-
+    public void setDatapoints(List<DatapointsRequestBean> datapoints) {
+        this.datapoints = datapoints;
+    }
 
 }

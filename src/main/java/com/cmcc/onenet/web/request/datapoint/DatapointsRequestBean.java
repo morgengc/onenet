@@ -12,25 +12,25 @@ import java.util.Date;
  */
 @ApiModel
 public class DatapointsRequestBean {
-	@ApiModelProperty(value = "上传数据点时间，可选。如果为空，则设备云会取当前时间。如果存在其格式必须为\"YYYY-MM-DD hh:mm:ss\"的形式（例如：2015-03-22 22:31:12）")
-	private Date at;
-	@ApiModelProperty(value = "上传数据点值")
-	private Object value;
+    @ApiModelProperty(value = "上传数据点时间，可选。如果为空，则设备云会取当前时间。如果存在其格式必须为\"YYYY-MM-DD hh:mm:ss\"的形式（例如：2015-03-22 22:31:12）")
+    private Date at;
+    @ApiModelProperty(value = "上传数据点值")
+    private Object value;
 
-	public Date getAt() {
-		return at;
-	}
+    public Date getAt() {
+        return at;
+    }
 
-	public void setAt(Date at) {
-		this.at = at;
-	}
+    public void setAt(Date at) {
+        this.at = at;
+    }
 
-	public Object getValue() {
-		return value;
-	}
+    public Object getValue() {
+        return value;
+    }
 
-	public void setValue(Object value) {
-		this.value = value;
-	}
+    public void setValue(Object value) {
+        this.value = value;
+    }
 
 }

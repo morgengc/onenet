@@ -7,7 +7,7 @@ package com.cmcc.onenet.constants;
  */
 public class Constants {
 
-	public enum Method {
-		POST,GET,PUT,DELETE;
-	}
+    public enum Method {
+        POST, GET, PUT, DELETE;
+    }
 }

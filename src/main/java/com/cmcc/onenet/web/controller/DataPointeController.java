@@ -24,30 +24,31 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/datapoint")
 public class DataPointeController extends BaseController {
-	@Resource DatapointsService datapointsService;
+    @Resource
+    DatapointsService datapointsService;
 
-	/**
-	 * 新增数据点
-	 *
-	 * @param requestBean
-	 * @return
-	 */
-	@ApiOperation(value = "新增", notes = "新增", consumes = "application/json")
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ResponseEntity<Void> add(@RequestBody @Valid DatapointCreateRequestBean requestBean) {
-		datapointsService.createDatapoints(requestBean);
-		return ResponseEntity.ok().build();
-	}
+    /**
+     * 新增数据点
+     *
+     * @param requestBean
+     * @return
+     */
+    @ApiOperation(value = "新增", notes = "新增", consumes = "application/json")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public ResponseEntity<Void> add(@RequestBody @Valid DatapointCreateRequestBean requestBean) {
+        datapointsService.createDatapoints(requestBean);
+        return ResponseEntity.ok().build();
+    }
 
-	/**
-	 * 查询数据点
-	 *
-	 * @param requestBean
-	 * @return
-	 */
-	@ApiOperation(value = "查询", notes = "查询", consumes = "application/json")
-	@RequestMapping(value = "/query", method = RequestMethod.POST)
-	public ResponseEntity<JSONObject> add(@RequestBody @Valid DatapointQueryRequestBean requestBean) {
-		return ResponseEntity.ok(datapointsService.query(requestBean));
-	}
+    /**
+     * 查询数据点
+     *
+     * @param requestBean
+     * @return
+     */
+    @ApiOperation(value = "查询", notes = "查询", consumes = "application/json")
+    @RequestMapping(value = "/query", method = RequestMethod.POST)
+    public ResponseEntity<JSONObject> query(@RequestBody @Valid DatapointQueryRequestBean requestBean) {
+        return ResponseEntity.ok(datapointsService.query(requestBean));
+    }
 }
