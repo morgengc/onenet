@@ -105,15 +105,10 @@ cmcc:
 |-|-
 |*src/main/java/\*/constants*|系统常量
 |*src/main/java/\*/config*|系统配置
-|*src/main/java/\*/controller*|请求层
-|*src/main/java/\*/controller/request*|请求层的请求数据
-|*src/main/java/\*/controller/response*|请求层的响应数据
-|*src/main/java/\*/domain*|实体
-|*src/main/java/\*/domain/repository*|访问数据库
-|*src/main/java/\*/domain/enums*|实体使用的枚举
 |*src/main/java/\*/exception*|平台定义异常
-|*src/main/java/\*/interceptor*|拦截器
+|*src/main/java/\*/model*|模型层
 |*src/main/java/\*/service*|服务层，封装各个业务的处理
 |*src/main/java/\*/util*|工具类
+|*src/main/java/\*/web*|控制层
 |*src/main/resources/application.yml*|系统具体配置项文件
 |*src/main/resources/log.xml*|系统日志配置
