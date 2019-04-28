@@ -15,7 +15,7 @@
 mvn eclipse:eclipse
 ```
 
-修改 *onenet\src\main\resources\application.yml* 中的 MySQL 用户名和密码，以及 OneNET 的配置：
+修改 *onenet\src\main\resources\application.yml* 中的 OneNET 的配置：
 
 ```
 cmcc:
