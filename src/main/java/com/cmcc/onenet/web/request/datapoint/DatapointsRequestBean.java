@@ -3,8 +3,6 @@ package com.cmcc.onenet.web.request.datapoint;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import java.util.Date;
 
 /**

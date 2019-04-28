@@ -1,11 +1,7 @@
 package com.cmcc.onenet.model.request;
 
-import com.cmcc.onenet.constants.Constants;
-import org.springframework.security.access.method.P;
-
 import java.util.Map;
 
-import static com.cmcc.onenet.constants.Constants.Method.GET;
 import static com.cmcc.onenet.constants.Constants.Method.POST;
 
 /**

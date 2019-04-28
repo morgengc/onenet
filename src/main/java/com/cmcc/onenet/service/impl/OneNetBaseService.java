@@ -3,7 +3,6 @@ package com.cmcc.onenet.service.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.cmcc.onenet.model.request.OneNetBaseRequestBean;
 import com.cmcc.onenet.util.HttpUtil;
-import springfox.documentation.spring.web.json.Json;
 
 import java.util.HashMap;
 import java.util.Map;

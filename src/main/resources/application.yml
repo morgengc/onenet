@@ -18,39 +18,10 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
-  datasource:
-    name: datasource
-    initialize: false
-    url: jdbc:mysql://127.0.0.1:3306/onenet?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF8
-    username: root
-    password: root
-    driverClassName: com.mysql.jdbc.Driver
-    max-active: 2
-    max-idle: 2
-    min-idle: 2
-    initial-size: 2
-    validation-query: select 1
-    test-on-borrow: true
-    test-on-return: false
-    test-while-idle: false
-    time-between-eviction-runs-millis: 3000
-    min-evictable-idle-time-millis: 3000
-    max-wait: 3000
-    jmx-enabled: true
-
   data:
     jpa:
       repositories:
         enabled: true
-
-mybatis:
-  config-location: classpath:mybatis-config.xml
-
-pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
 
 cmcc:
   onenet:

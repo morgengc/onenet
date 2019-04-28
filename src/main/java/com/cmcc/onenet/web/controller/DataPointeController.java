@@ -2,7 +2,6 @@ package com.cmcc.onenet.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cmcc.onenet.service.DatapointsService;
-import com.cmcc.onenet.service.impl.BaseService;
 import com.cmcc.onenet.web.request.datapoint.DatapointCreateRequestBean;
 import com.cmcc.onenet.web.request.datapoint.DatapointQueryRequestBean;
 import io.swagger.annotations.Api;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * @Author: wannengjia@gamil.com
