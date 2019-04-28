@@ -51,6 +51,11 @@ public abstract class OneNetBaseService extends BaseService {
         return object;
     }
 
+    /**
+     * 构建OneNET API的参数列表
+     * @param urlParam
+     * @return
+     */
     private String buildUrl(Map<String, Object> urlParam) {
         if (urlParam == null || urlParam.isEmpty()) {
             return "";
