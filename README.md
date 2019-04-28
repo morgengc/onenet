@@ -21,11 +21,11 @@ mvn eclipse:eclipse
 ```
 cmcc:
   onenet:
-    drivceid: 39333785
+    deviceid: 39333785
     api-key: 9UEjFtzBsVdbfr6DaV9VvLM3kos=
 ```
 
-这个 `drivceid` 表示设备ID（名字为笔误，懒得改代码了），可以从 OneNET 控制台的“设备列表”中获取。ApiKey 则为设备所属产品的属性，可以从“产品概况”中获取。
+这个 `deviceid` 表示设备ID，可以从 OneNET 控制台的“设备列表”中获取。ApiKey 则为设备所属产品的属性，可以从“产品概况”中获取。
 
 	
 ## 三、启动
@@ -37,11 +37,11 @@ cmcc:
 
 访问 http://localhost:8081/swagger-ui.html 即可以查看项目实现的 API。目前项目实现了两个 API，新增和查询。
 
-![接口](https://github.com/morgengc/onenet/blob/master/img/image_1d9fm3u451oae9p8hsq1qnhcte9.png)
+![API列表](https://github.com/morgengc/onenet/blob/master/img/image_1d9fm3u451oae9p8hsq1qnhcte9.png)
 
 点开查询，在默认参数那里单击一下，就可以将默认参数填入输入框中（Chrome 可以，Firefox 不行）。
 
-![查询](https://github.com/morgengc/onenet/blob/master/img/image_1d9fm85r93ae8h7mjb9av8dim.png)
+![查询API](https://github.com/morgengc/onenet/blob/master/img/image_1d9fm85r93ae8h7mjb9av8dim.png)
 
 修改成我们的实际参数，如下：
 
@@ -52,7 +52,7 @@ cmcc:
   "deviceId": 39333785,
   "duration": 0,
   "end": "2019-04-27T15:06:56.891Z",
-  "limit": 0,
+  "limit": 1000,
   "sort": "DESC",
   "start": "2018-04-27T15:06:56.891Z"
 }
@@ -64,40 +64,40 @@ cmcc:
 {
   "errno": 0,
   "data": {
-    "count": 3,
+    "count": 946,
     "datastreams": [
       {
         "datapoints": [
           {
-            "at": "2019-04-27 23:24:25.283",
-            "value": 26.08
+            "at": "2019-04-28 00:09:16.667",
+            "value": 26.43
+          },
+          {
+            "at": "2019-04-28 00:08:42.356",
+            "value": 26.389999
+          },
+          
+          ...
+          
+          {
+            "at": "2018-08-19 21:22:44.254",
+            "value": 29.780001
           }
         ],
         "id": "3303_0_5700"
-      },
-      {
-        "datapoints": [
-          {
-            "at": "2019-04-27 23:24:25.300",
-            "value": 40.417271
-          }
-        ],
-        "id": "3304_0_5700"
-      },
-      {
-        "datapoints": [
-          {
-            "at": "2019-04-27 23:24:25.150",
-            "value": 5.833333
-          }
-        ],
-        "id": "3301_0_5700"
       }
     ]
   },
   "error": "succ"
 }
 ```
+
+我们使用 POSTMAN 访问本地 Web 服务，就可以通过本地后端将请求进行转发，从而获取到 OneNET 平台的数据。
+
+![Header参数](https://github.com/morgengc/onenet/blob/master/img/image_1d9h3abhfkrp1tm01ov311upeiu9.png)
+
+![POST JSON参数](https://github.com/morgengc/onenet/blob/master/img/image_1d9h3aufjgcf10qd1kcc1f5k1jbcm.png)
+
 
 ## 五、目录说明
 
