@@ -17,46 +17,51 @@ import java.util.Map;
  */
 public abstract class OneNetBaseService extends BaseService {
 
-	protected JSONObject connectionJson(OneNetBaseRequestBean bean) {
-		JSONObject object = null;
+    protected JSONObject connectionJson(OneNetBaseRequestBean bean) {
+        JSONObject object = null;
 
-		Map<String, Object> headers = new HashMap<>();
-		headers.put("api-key", bean.getApiKey());
-		headers.put("Content-Type", bean.getContentType());
-		bean.setUrl(bean.getUrl() + buildUrl(bean.getUrlParam()));
-		try {
-			object = HttpUtil.doPostJson(bean.getUrl(), JSONObject.toJSONString(bean.getContent()), headers);
-		} catch (Exception e) {
-			logger.info("请求异常： {}", e);
-		}
-		return object;
-	}
+        Map<String, Object> headers = new HashMap<>();
+        headers.put("api-key", bean.getApiKey());
+        headers.put("Content-Type", bean.getContentType());
+        bean.setUrl(bean.getUrl() + buildUrl(bean.getUrlParam()));
+        try {
+            object = HttpUtil.doPostJson(bean.getUrl(), JSONObject.toJSONString(bean.getContent()), headers);
+        } catch (Exception e) {
+            logger.info("请求异常： {}", e);
+        }
+        return object;
+    }
 
-	protected JSONObject connectionGet(OneNetBaseRequestBean bean) {
-		JSONObject object = null;
+    /**
+     * 根据本地的请求参数，组装URL访问OneNET，并返回OneNET的响应
+     * @param bean 本地请求参数
+     * @return OneNET响应
+     */
+    protected JSONObject connectionGet(OneNetBaseRequestBean bean) {
+        JSONObject object = null;
 
-		Map<String, Object> headers = new HashMap<>();
-		headers.put("api-key", bean.getApiKey());
-		bean.setUrl(bean.getUrl() + buildUrl(bean.getUrlParam()));
-		try {
-			object = HttpUtil.doGet(bean.getUrl(), headers);
-		} catch (Exception e) {
-			logger.info("请求异常： {}", e);
-		}
-		return object;
-	}
+        Map<String, Object> headers = new HashMap<>();
+        headers.put("api-key", bean.getApiKey());
+        bean.setUrl(bean.getUrl() + buildUrl(bean.getUrlParam()));
+        try {
+            object = HttpUtil.doGet(bean.getUrl(), headers);
+        } catch (Exception e) {
+            logger.info("请求异常： {}", e);
+        }
+        return object;
+    }
 
-	private String buildUrl(Map<String, Object> urlParam) {
-		if (urlParam == null || urlParam.isEmpty()) {
-			return "";
-		}
-		StringBuilder url = new StringBuilder();
-		url.append("?cmcc-onenet=1");
-		urlParam.forEach((k, v) -> {
-			url.append("&" + k + "=" + v);
-		});
-		return url.toString();
-
-	}
+    private String buildUrl(Map<String, Object> urlParam) {
+        if (urlParam == null || urlParam.isEmpty()) {
+            return "";
+        }
+        StringBuilder url = new StringBuilder();
+        //url.append("?cmcc-onenet=1");
+        url.append("?1=1");
+        urlParam.forEach((k, v) -> {
+            url.append("&" + k + "=" + v);
+        });
+        return url.toString();
+    }
 
 }
